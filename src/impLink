@@ -1,2 +1,6 @@
 https://dzone.com/articles/best-practice-for-exception-handling-in-spring-boo
 https://www.baeldung.com/exception-handling-for-rest-with-spring
+git add .            
+git push -u origin main
+git commit -m "Spring Rest Boot + Spring MVC Setup"
+https://medium.com/@jovannypcg/understanding-springs-controlleradvice-cd96a364033f
