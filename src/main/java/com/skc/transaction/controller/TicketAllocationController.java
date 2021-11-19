@@ -22,8 +22,8 @@ public class TicketAllocationController {
 	TicketService ticketService;
 
 	@GetMapping(value = "/ticket")
-	public @ResponseBody ResponseResultBody getTickeAvailability() throws ServiceException {
-		this.ticketService.getTicketAvailable();
+	public @ResponseBody ResponseResultBody getTickeAvailability() throws ServiceException {		
+		this.ticketService.getTicketAvailable();		
 		return new ResponseResultBody(Constant.SUCCESS, HttpStatus.OK.value(), new HashMap<String, Object>());
 	}
 

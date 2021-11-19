@@ -38,4 +38,11 @@ public class ExceptionHelper {
 		return new ResponseResultBody(Constant.FAILED, HttpStatus.NOT_FOUND.value(), Constant.EMPTY_RESULT, ex.getMessage());
 	}
 	
+	@ExceptionHandler(Exception.class)  
+	public @ResponseBody ResponseResultBody ArithmeticException(Exception ex) {
+		logger.error("ArithmeticException Exception: ", ex.getMessage());
+		return new ResponseResultBody(Constant.FAILED, HttpStatus.INTERNAL_SERVER_ERROR.value(), Constant.EMPTY_RESULT, ex.getMessage());
+	}
+	
+	
 }
