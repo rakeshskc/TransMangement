@@ -4,3 +4,6 @@ git add .
 git push -u origin main
 git commit -m "Spring Rest Boot + Spring MVC Setup"
 https://medium.com/@jovannypcg/understanding-springs-controlleradvice-cd96a364033f
+https://auth0.com/blog/get-started-with-custom-error-handling-in-spring-boot-java/
+https://stackabuse.com/guide-to-quartz-with-spring-boot-job-scheduling-and-automation/
+https://stackabuse.com/getting-started-with-thymeleaf-in-java-and-spring/
