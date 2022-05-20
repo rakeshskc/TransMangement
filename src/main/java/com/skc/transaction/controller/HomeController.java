@@ -1,6 +1,7 @@
 package com.skc.transaction.controller;
 
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,9 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
@@ -51,4 +52,20 @@ public class HomeController {
 		return "helloview";
 	}
 	
+	// Form Post example.
+	@PostMapping(path = "/form-post",
+			consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE
+				}
+	)
+	public String login(HttpServletRequest req, HttpServletResponse resp,Model model) {
+		String userName = req.getParameter("userName");
+		String passWord = req.getParameter("password");
+		if( Objects.nonNull(userName)) {
+			if(userName.equalsIgnoreCase("rakesh")) {
+				model.addAttribute("msg", userName);
+				return "home";
+			}
+		}		
+		return "index";
+	}
 }
