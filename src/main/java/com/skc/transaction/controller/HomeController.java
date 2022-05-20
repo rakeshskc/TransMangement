@@ -1,7 +1,5 @@
 package com.skc.transaction.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/")
@@ -36,5 +35,11 @@ public class HomeController {
 			System.out.println(ex);
 		}
 	}
-
+	
+	// Path Variable example
+	@GetMapping("/page/{pageNumber}")
+	public @ResponseBody String getPageNumber(@PathVariable int pageNumber) {
+		return "Hi, you are at page " + pageNumber;
+	}
+	
 }
